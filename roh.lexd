@@ -1,0 +1,103 @@
+PATTERNS
+Nominal
+Verb
+Numeral [<num>:] NumeralNC
+
+PATTERN Nominal
+NounStem1 [<n>:] [<nc1>:] (Def1|Case)
+NounStem2 [<n>:] [<nc2>:] (Def2|Case)
+#nominalization
+
+PATTERN Verb
+VerbStem [<v>:] Tense
+
+LEXICON NounStem1 # Nouns that refer to "everything animate, including humans, animals, plants, and some objects which are manipulated by humans, such as book, pen, glass, etc." (learnrohingya.com)
+baf	#father
+bakšu	#box
+bilai	#cat
+fiyala	#cup
+fúl	#flower
+fuwa	#child
+holom	#pen
+kitab	#book
+manuš	#man
+mas	#fish
+sep	#apple
+
+LEXICON NounStem2 # Nouns that refer to "everything else that is inanimate, and abstract nouns, such as justice, freedom, etc." (learnrohingya.com)
+doroza	#door
+gór	#house
+hal	#river
+šohor	#city
+ṭebil	#table
+zuta	#shoe
+
+LEXICON VerbStem
+gor	#do
+lek	#write
+ha	#eat
+dũr	#run
+ai	#come
+#za	#go	# has irregular forms in some tenses (e.g. present perfect)
+
+LEXICON Def1
+<def><sg>:{g}wa
+<def><pl>:{g}un
+
+LEXICON Def2
+<def><sg>:{g}an
+<def><pl>:{g}un
+
+LEXICON Case
+<abs>:
+<erg>:{y}e
+<gen>:{o}r
+<dat>:{o}re
+<abl>:{o}ttu
+<loc>:{o}t
+<ben>:{o}lla
+<instr>:{y}e
+
+LEXICON Tense
+# simple present
+<1p><pres>:i
+<2p><pres>:o
+<3p><pres>:e
+# present progressive
+<1p><pprog>:ir
+<2p><pprog>:or
+<3p><pprog>:er
+# present perfect
+<1p><pperf>:iyi
+<2p><pperf>:iyo
+<3p><pperf>:iye
+# simple future
+<1p><fut>:iyum
+<2p><fut>:iba
+<3p><fut>:ibo
+
+LEXICON Numeral
+ek	#one
+#dui	#two ! irregular form? (duiyan for nc2, duizon/duwan for nc1)
+tin	#three
+sair	#four
+fãz	#five
+so	#six
+hãt	#seven
+ašṭo	#eight
+no	#nine
+doš	#ten
+egaro	#eleven
+baro	#twelve
+tero	#thirteen
+soiddo	#fourteen
+funro	#fifteen
+šullo	#sixteen
+hõtoro	#seventeen
+aṛoro	#eighteen
+unnuš	#nineteen
+kuri	#twenty
+
+LEXICON NumeralNC
+<nc1>:zon
+<nc2>:{w}an

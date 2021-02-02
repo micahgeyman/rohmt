@@ -1,0 +1,60 @@
+Alphabet 
+	b d ḍ f g h j k l m n p r ṛ s š t ṭ v w y z
+	a ã á e ẽ é i ĩ í o õ ó u ũ ú
+	
+	%{g%}:g %{g%}:0 %{y%}:y %{y%}:0 %{o%}:o %{o%}:0
+	
+	a:0 e:0
+	
+	%{w%}:g %{w%}:w
+;
+
+Sets
+Vowels = a ã á e ẽ é i ĩ í o õ ó u ũ ú ;
+Consonants = b d ḍ f g h j k l m n p r ṛ s š t ṭ v w y z ;
+
+Rules
+! Nouns--------------------------------------
+"insertion of g after vowels and r" ! definite suffixes
+%{g%}:g <=> Vowels: _ a n ; ! before -an
+	Vowels: _ u n ; ! before -un
+	r: _ ; ! before all definite suffixes (-wa, -an, -un)
+
+"gemination on noun stems with definite suffix" ! for definite suffixes -wa, -un, -an
+%{g%}:Cx <=> Cy _ ;
+	where	Cy in (b d ḍ f g h j k l m n p ṛ s š t ṭ v w y z)
+			Cx in (b d ḍ f g h j k l m n p ṛ s š t ṭ v w y z)
+	matched ;
+
+"insertion of y between vowels" ! erg/instr suffixes
+%{y%}:y <=> Vowels: _ ;
+
+"drop y after consonants" ! erg/instr suffixes
+%{y%}:0 <=> Consonants: _ ;
+
+"insertion of o after consonants" ! gen/dat/abl/loc/ben suffixes
+%{o%}:o <=> Consonants: _ ;
+
+"drop o after vowels" ! gen/dat/abl/loc/ben suffixes
+%{o%}:0 <=> Vowels: _ ;
+
+! Verbs--------------------------------------
+"coalescence of a + o to o"
+a:0 <=> _ o ;
+
+"coalescence of a + e to a"
+e:0 <=>	a _ ;
+
+! Numerals-----------------------------------
+"gemination on numerals in noun class 2"
+%{w%}:Cx <=> Cy _ ;
+	where	Cy in (k n z t š)
+			Cx in (k n z t š)
+	matched ;
+
+"g after r" ! occurs with sair 'four'
+%{w%}:g <=> r _ ;
+
+"w after vowels" ! exception with dui 'two'
+%{w%}:w <=> Vowels: _ a n ;
+
