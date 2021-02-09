@@ -4,33 +4,31 @@ Verb
 Numeral [<num>:] NumeralNC
 
 PATTERN Nominal
-NounStem1 [<n>:] [<nc1>:] (Def1|Case)
-NounStem2 [<n>:] [<nc2>:] (Def2|Case)
+(NounStem [<n>:] (Def|Case))[^[NC1,NC2]]
 #nominalization
 
 PATTERN Verb
 VerbStem [<v>:] Tense
 
-LEXICON NounStem1 # Nouns that refer to "everything animate, including humans, animals, plants, and some objects which are manipulated by humans, such as book, pen, glass, etc." (learnrohingya.com)
-baf	#father
-bakšu	#box
-bilai	#cat
-fiyala	#cup
-fúl	#flower
-fuwa	#child
-holom	#pen
-kitab	#book
-manuš	#man
-mas	#fish
-sep	#apple
+LEXICON NounStem 
+baf[NC1,Human]	#father
+bakšu[NC1]	#box
+bilai[NC1]	#cat
+fiyala[NC1]	#cup
+fúl[NC1]	#flower
+fuwa[NC1,Human]	#child
+holom[NC1]	#pen
+kitab[NC1]	#book
+manuš[NC1,Human]	#man
+mas[NC1]	#fish
+sep[NC1]	#apple
 
-LEXICON NounStem2 # Nouns that refer to "everything else that is inanimate, and abstract nouns, such as justice, freedom, etc." (learnrohingya.com)
-doroza	#door
-gór	#house
-hal	#river
-šohor	#city
-ṭebil	#table
-zuta	#shoe
+doroza[NC2]	#door
+gór[NC2]	#house
+hal[NC2]	#river
+šohor[NC2]	#city
+ṭebil[NC2]	#table
+zuta[NC2]	#shoe
 
 LEXICON VerbStem
 gor	#do
@@ -40,12 +38,9 @@ dũr	#run
 ai	#come
 #za	#go	# has irregular forms in some tenses (e.g. present perfect)
 
-LEXICON Def1
-<def><sg>:{g}wa
-<def><pl>:{g}un
-
-LEXICON Def2
-<def><sg>:{g}an
+LEXICON Def
+<def><sg>:{g}wa[NC1]
+<def><sg>:{g}an[NC2]
 <def><pl>:{g}un
 
 LEXICON Case
@@ -77,8 +72,8 @@ LEXICON Tense
 <3p><fut>:ibo
 
 LEXICON Numeral
-ek	#one
-#dui	#two ! irregular form? (duiyan for nc2, duizon/duwan for nc1)
+ek	#one ! irregular form? (ekkan for nc2, ekzon/uggwa for nc1)
+dui	#two ! irregular form? (duiyan for nc2, duizon/duwan for nc1)
 tin	#three
 sair	#four
 fãz	#five
@@ -99,5 +94,6 @@ unnuš	#nineteen
 kuri	#twenty
 
 LEXICON NumeralNC
-<nc1>:zon
+<nc1>:zon[Human]
+<nc1>:{g}wa
 <nc2>:{w}an
